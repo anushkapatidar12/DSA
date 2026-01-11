@@ -1,0 +1,17 @@
+//count the number of ways to reach the nth stair
+class Main {
+    public static void main(String[] args) {
+         int ans = Count(4);
+         System.out.println(ans);
+    }
+    public static int Count(int N){
+        if(N == 1 || N == 2){
+            return N;
+        }
+        int temp1 = Count(N-1);
+        int temp2 = Count(N-2);
+        int result = temp1+temp2;
+        return result;
+    }
+     
+    }
