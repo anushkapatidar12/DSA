@@ -1,0 +1,12 @@
+//calculate 2^n
+class Main {
+    public static void main(String[] args) {
+        int ans = Fact(3);
+        System.out.println(ans);
+    }
+    public static int Fact(int N){
+        if(N == 1)
+        return 2;
+        int temp = 2 *Fact(N - 1);
+        return temp ;
+    
