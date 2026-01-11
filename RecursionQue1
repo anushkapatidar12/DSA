@@ -1,0 +1,19 @@
+// Recursion Question 1
+// Problem: Write a recursive function to solve a recursion problem
+
+class RecursionQue1 {
+    public static void main(String[] args) {
+        // Test your recursive function here
+        
+    }
+    
+    // Add your recursive function below
+    public static int solution(int n) {
+        // Base case
+        if (n <= 1) {
+            return n;
+        }
+        // Recursive case
+        return solution(n - 1) + n;
+    }
+}
