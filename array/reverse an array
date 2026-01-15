@@ -1,0 +1,32 @@
+//reverse an array 
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the number of elements");
+        int n = sc.nextInt();
+        System.out.println("enter the elements");
+        int[] arr = new int[n];
+        
+        for(int k = 0; k < n; k++){
+            arr[k] = sc.nextInt();
+        }
+        //main logic
+        int i = 0;
+        int j = n-1;
+        while(i < j){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            
+            i++;
+            j--;
+        }
+      //printing the reverse array
+        for(int q = 0; q < n; q++){
+            System.out.print(arr[q]);
+        }
+        
+        
+    }
+}
