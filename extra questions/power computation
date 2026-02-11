@@ -1,0 +1,19 @@
+public class Main{
+    public static void main(String[] args){
+        int a = 4;
+        int n = 2;
+        int ans =  pow(  a,  n);
+        System.out.println(ans);
+    }
+    public static int pow(int a, int n){
+        if(n == 1){
+            return a;
+        }
+        int temp = pow(a, n/2);
+        if(n % 2 == 0){
+            return temp*temp;
+        }else{
+            return temp*temp*a;
+        }
+    }
+}
