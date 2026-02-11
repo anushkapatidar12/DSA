@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter N: ");
+        int n = sc.nextInt();
+
+        if (n < 2) {
+            System.out.println("No primes less than 2.");
+            return;
+        }
+
+        // true means "prime" initially
+        boolean[] isPrime = new boolean[n + 1];
+
+        // Assume all numbers from 2 to n are prime
+        for (int i = 2; i <= n; i++) {
+            isPrime[i] = true;
+        }
+
+        // Sieve process
+        for (int i = 2; i * i <= n; i++) {
+            if (isPrime[i]) {
+                // Mark multiples of i as not prime
+                for (int j = i * i; j <= n; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+
+        // Print all primes
+        System.out.println("Prime numbers up to " + n + ":");
+        for (int i = 2; i <= n; i++) {
+            if (isPrime[i]) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
